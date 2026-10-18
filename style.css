@@ -1,0 +1,445 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #0F0E13;
+    color: #e5e5eb;
+    font-family: Arial, sans-serif;
+}
+
+main {
+    width: 86%;
+    max-width: 1200px;
+    margin: 20px auto;
+}
+
+
+#main-header {
+    display: flex;
+    background-color: #09090e;
+    border: 1px solid #202027;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.header-inner {
+    width: 86%;
+    max-width: 1200px;
+    min-height: 42px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+}
+
+.logo {
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: #00e64d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    filter: drop-shadow(0 0 10px #00e64d) drop-shadow(0 0 5px #00ff66);
+    transform: rotate(180deg);
+}
+
+
+.logo img {
+    width: 19px;
+    height: 19px;
+}
+
+.header-inner h1 {
+    margin: 0;
+    color: #00e64d;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+.connection-status {
+    justify-self: end;
+
+    display: flex;
+    align-items: center;
+    gap: 5px;
+
+    color: #00e64d;
+    border: 1px solid #087d32;
+    border-radius: 20px;
+    padding: 4px 10px;
+
+    font-size: 9px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.status-dot {
+    width: 5px;
+    height: 5px;
+    background-color: #00e64d;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00e64d;
+}
+
+
+#radar-section {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    gap: 70px;
+    width: 90%;
+    height: 220px;
+    margin: 30px auto;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    padding-left: 0px;
+    background-color: #16121E;
+    border: 1px solid #292932;
+    border-radius: 15px;
+    position: relative;
+    transition: border-color 0.3s ease;
+}
+
+#radar-section:hover {
+    border-color: #00e64d;
+}
+
+.radar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 45%;
+    left: 0px;
+
+}
+
+.radar-circle {
+    width: 150px;
+    aspect-ratio: 1;
+    border: 1px solid #00e64d;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+.radar-circle::before,
+.radar-circle::after {
+    content: "";
+    position: absolute;
+    background-color: #17452b;
+}
+
+.radar-circle::before {
+    width: 1px;
+    height: 100%;
+    left: 50%;
+}
+
+.radar-circle::after {
+    width: 100%;
+    height: 1px;
+    top: 50%;
+}
+
+.radar-sweep {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+
+    background: conic-gradient(from 0deg,
+            transparent 0deg 270deg,
+            #00e64d55 360deg);
+
+    animation: radar-rotate 4s linear infinite;
+}
+
+@keyframes radar-rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.signal {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #00e64d;
+    box-shadow: 0 0 8px #00e64d;
+    z-index: 1;
+}
+
+.signal-one {
+    top: 30%;
+    left: 65%;
+}
+
+.signal-two {
+    top: 65%;
+    left: 35%;
+}
+
+.signal-three {
+    top: 42%;
+    left: 42%;
+}
+
+.radar-info {
+    display: block;
+    justify-content: space-around;
+    align-items: center;
+    gap: 30px;
+    width: 55%;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stat-number {
+    color: #00e64d;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.stat-label {
+    color: #8d8d9b;
+    font-size: 10px;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    ;
+}
+
+#actions-section {
+    display: flex;
+    margin-left: 5%;
+    width: 90%;
+    height: 40px;
+    gap: 10px;
+}
+
+.action {
+    display: flex;
+    width: 12%;
+    border-radius: 30px;
+    background-color: #16121E;
+    border: 1px solid #292932;
+    cursor: pointer;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 1%;
+    gap: 6px;
+    transition: border-color 0.6s ease, background-color 0.6s ease;
+}
+
+.action:hover {
+    border-color: #00e64d;
+    border-top-color: #292932;
+    background-color: #1c2e22;
+}
+
+.action-img {
+    filter: brightness(0) invert(1);
+    width: 10px;
+    height: 10px;
+}
+
+.action-label {
+    font-size: 10px;
+}
+
+:root {
+    --bg-card: #11141a;
+    --text-primary: #ffffff;
+    --text-muted: #737b8c;
+    --green-neon: #00ff66;
+    --red-critical: #ff2a5f;
+    --yellow-high: #ffb800;
+    --green-medium: #00ff66;
+    --border-radius: 8px;
+}
+
+#missions-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    padding: 20px;
+    background-color: #0b0d12;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    direction: ltr;
+    width: 93%;
+    margin-left: 4%;
+}
+
+.mission-card {
+    background-color: #16121E;
+    border: 1px solid #292932;
+    border-radius: 15px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 110px;
+    border-left: 4px solid transparent;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    will-change: transform;
+    transition: border-color 0.5s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mission-card:hover {
+    border-color: #00e64d;
+    transform: translateY(-10px) rotate(-2deg);
+    box-shadow: 0 0 2px #00e64d;
+}
+
+.mission-card .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mission-card .badge {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+}
+
+.mission-card .status {
+    font-size: 12px;
+    color: var(--text-muted);
+}
+
+.mission-card .card-title {
+    color: var(--text-primary);
+    font-size: 14px;
+    font-weight: 600;
+    margin: 4px 0;
+}
+
+.mission-card .card-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mission-card .progress-bar {
+    flex: 1;
+    height: 6px;
+    background-color: #1c222e;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.mission-card .progress-fill {
+    height: 100%;
+    background-color: var(--green-neon);
+    border-radius: 3px;
+}
+
+.mission-card .percentage {
+    font-size: 11px;
+    color: var(--green-neon);
+    font-weight: bold;
+    min-width: 28px;
+    text-align: right;
+}
+
+.mission-card.critical {
+    border-left-color: var(--red-critical);
+}
+
+.mission-card.critical .badge {
+    background-color: rgba(255, 42, 95, 0.15);
+    color: var(--red-critical);
+    border: 1px solid var(--red-critical);
+}
+
+.mission-card.high {
+    border-left-color: var(--yellow-high);
+}
+
+.mission-card.high .badge {
+    background-color: rgba(255, 184, 0, 0.15);
+    color: var(--yellow-high);
+    border: 1px solid var(--yellow-high);
+}
+
+.mission-card.medium {
+    border-left-color: var(--green-medium);
+}
+
+.mission-card.medium .badge {
+    background-color: rgba(0, 255, 102, 0.15);
+    color: var(--green-medium);
+    border: 1px solid var(--green-medium);
+}
+
+#threat-section {
+    width: 90%;
+    margin: 1px auto 1 px auto;
+    padding: 10px 15px;
+    background-color: #27111B;
+    border: 1px solid #7D1933;
+    border-radius: 15px;
+    color: rgb(168, 22, 22);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-left: 5.5%;
+    transition: background-color 0.5s ease, transform 0.5s ease;
+}
+
+#threat-section:hover{
+    background-color: #482128;
+    transform: scale(1.02);
+}
+
+.res-signal {
+    position: absolute;
+    left: 20px;
+    width: 8px;
+    height: 8px;
+    border-radius: 505;
+    background-color: red;
+    box-shadow: 0 0 8px red;
+}
+
+#bottom-nav {
+    display: flex;
+    background-color: #09090e;
+    border: 1px solid #202027;
+    width: 100%;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    gap: 25%;
+}
+
+.pushed {
+    color: #00e64d;
+}
+
+.nav-img {
+    filter: brightness(0) invert(1);
+}
+
+.greenIMG {
+    filter: brightness(0) saturate(100%) invert(64%) sepia(85%) saturate(1421%) hue-rotate(85deg) brightness(101%) contrast(101%);
+}

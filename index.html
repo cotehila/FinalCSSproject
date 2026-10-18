@@ -1,34 +1,153 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SIGINT OPS</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
+
     <header id="main-header">
+        <div class="header-inner">
+
+            <div class="logo">
+                <img src="shield.svg" alt="Shield logo">
+            </div>
+
+            <h1>SIGINT OPS</h1>
+
+            <div class="connection-status">
+                <span class="status-dot"></span>
+                SECURE ONLINE
+            </div>
+
+        </div>
     </header>
 
+
     <main>
+
         <section id="radar-section">
+
+            <div class="radar">
+                <div class="radar-circle">
+                    <div class="radar-sweep"></div>
+                    <span class="signal signal-one"></span>
+                    <span class="signal signal-two"></span>
+                    <span class="signal signal-three"></span>
+                </div>
+            </div>
+
+            <div class="radar-info">
+                <div class="stat">
+                    <span class="stat-number">24</span>
+                    <span class="stat-label">ACTIVE SIGNALS</span>
+                </div>
+
+                <div class="stat">
+                    <span class="stat-number">07</span>
+                    <span class="stat-label">PRIORITY ALERTS</span>
+                </div>
+            </div>
+
         </section>
 
+
         <section id="actions-section">
+            <div class="action">
+                <img class="action-img" src="zap.svg" alt="zap logo">
+                <div class="action-label">New Brief</div>
+            </div>
+            <div class="action">
+                <img class="action-img" src="code.svg" alt="code logo">
+                <div class="action-label">CODE</div>
+            </div>
+            <div class="action">
+                <img class="action-img" src="rocket.svg" alt="rocket logo">
+                <div class="action-label">ROCKET</div>
+            </div>
         </section>
 
         <section id="missions-section">
+            <div class="mission-card critical">
+                <div class="card-header">
+                    <span class="badge">CRITICAL</span>
+                    <span class="status">In Progress</span>
+                </div>
+                <div class="card-title">Operation Nightfall</div>
+                <div class="card-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 65%;"></div>
+                    </div>
+                    <span class="percentage">65%</span>
+                </div>
+            </div>
+            <div class="mission-card high">
+                <div class="card-header">
+                    <span class="badge">HIGH</span>
+                    <span class="status">Analyzing</span>
+                </div>
+                <div class="card-title">Signal Intercept Alpha</div>
+                <div class="card-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <span class="percentage">40%</span>
+                </div>
+            </div>
+            <div class="mission-card medium">
+                <div class="card-header">
+                    <span class="badge">MEDIUM</span>
+                    <span class="status">Pending</span>
+                </div>
+                <div class="card-title">Asset Recovery</div>
+                <div class="card-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 15%;"></div>
+                    </div>
+                    <span class="percentage">15%</span>
+                </div>
+            </div>
+
+            <div class="mission-card high">
+                <div class="card-header">
+                    <span class="badge">HIGH</span>
+                    <span class="status">Active</span>
+                </div>
+                <div class="card-title">Cyber Defense Grid</div>
+                <div class="card-footer">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 80%;"></div>
+                    </div>
+                    <span class="percentage">80%</span>
+                </div>
+            </div>
         </section>
 
-        <section id="threat-section">
+        <section id="threat-section">THREAD DETECTED
+            <span class="signal res-signal"></span>
         </section>
     </main>
 
     <nav id="bottom-nav">
-
+        <div>
+            <img class="greenIMG nav-img" src="activity.svg">
+            <span class="nav-label pushed">Dashboard</span>
+        </div>
+        <div>
+           <img class="nav-img" src="radio.svg">
+            <span class="nav-label">Feed</span> 
+        </div>
+        <div>
+            <img class="nav-img" src="file-text.svg">
+            <span class="nav-label">Brief</span>
+        </div>
     </nav>
 
 </body>
+
 </html>
